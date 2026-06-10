@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-yellow-500: #EAB308;
+  --color-yellow-600: #CA8A04;
+  --color-black: #0A0A0A;
+  --color-dark: #111111;
+}
+
+@layer base {
+  body {
+    @apply bg-white dark:bg-black text-gray-900 dark:text-gray-200;
+  }
+}
+
+/* Scroll personalizado */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-gray-100 dark:bg-dark;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-yellow-500 rounded-full;
+}
