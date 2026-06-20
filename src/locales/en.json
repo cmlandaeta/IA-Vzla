@@ -1,0 +1,168 @@
+{
+  "nav": {
+    "features": "Features",
+    "pipeline": "Pipeline",
+    "demo": "Demo",
+    "integration": "Integration",
+    "documentation": "Documentation",
+    "requestAccess": "Request Access"
+  },
+  "hero": {
+    "badge": "AI for PBX in Venezuela, LATAM and Europe",
+    "title": "AI Agent for",
+    "titleAsterisk": "Asterisk",
+    "titleAnd": "and",
+    "titleFreeswitch": "FreeSWITCH",
+    "description": "Integrate artificial intelligence into your phone system and IVR in minutes. Customer service, collections, reminders and more, 100% on-premise or cloud.",
+    "tryNow": "Try AI Agent Now",
+    "documentation": "Documentation"
+  },
+  "integration": {
+    "title": "Integration",
+    "titleHighlight": "simple & direct",
+    "description": "Connect VenIA Voice to your existing PBX in less than 5 minutes without changing your infrastructure",
+    "did": "DID",
+    "clientCalls": "Your client calls",
+    "yourPbx": "Your PBX",
+    "veniaVoice": "VenIA Voice",
+    "localAgent": "Local AI Agent",
+    "response": "AI Response",
+    "naturalVoice": "Natural voice",
+    "process": "Process: Your client calls — Your AI agent processes and responds in real-time"
+  },
+"pipeline": {
+  "title": "Voice Pipeline",
+  "titleHighlight": "optimized",
+  "description": "Voice processing architecture with ultra-low latency for natural and fluid conversations",
+  
+  "stt": "STT (Speech-to-Text)",
+  "sttSub": "Speech recognition",
+  "sttDesc": "Vosk on-premise with Spanish model optimized for your infrastructure. Real-time audio processing without cloud dependency, ensuring privacy and low latency.",
+  "sttMetric": "98% accuracy in Spanish",
+  "sttDetail": "• Vosk model configured for Venezuelan Spanish\n• Local processing, no audio sent to third parties\n• <500ms latency for short phrases\n• Support for 16kHz audio from WebRTC\n• Sends partial and final transcriptions in real-time",
+  
+  "llm": "LLM (Large Language Model)",
+  "llmSub": "Natural language processing",
+  "llmDesc": "Llama 3.2 (1B) model optimized for local execution. Processes user intent, extracts key information, and generates coherent responses in Spanish.",
+  "llmMetric": "<500ms per inference",
+  "llmDetail": "• Llama 3.2 (1B) model running locally\n• Optimized for collections and customer service tasks\n• Extraction of identification, dates and payment commitments\n• Offline fallback without external API dependency\n• Conversation context for coherent responses",
+  
+  "tts": "TTS (Text-to-Speech)",
+  "ttsSub": "Speech synthesis",
+  "ttsDesc": "Spanish voice synthesis with natural and expressive voice. Real-time audio generation for fluid and human-like responses.",
+  "ttsMetric": "Natural and emotional voice",
+  "ttsDetail": "• 'es-VE-SebastianNeural' voice with natural intonation\n• Real-time synthesis with <800ms latency\n• Support for long phrases and numbers\n• Temporary audio files for playback in calls\n• Fallback to native FreeSWITCH speak if fails",
+  
+  "footer": "* Full pipeline runs 100% on-premise on your infrastructure. No cloud dependency, ensuring data sovereignty and constant availability."
+},
+  "features": {
+    "dataSovereignty": "Data Sovereignty",
+    "dataSovereigntyDesc": "Full on-premise processing. Your conversations never leave your infrastructure.",
+    "plugAndPlay": "Plug & Play",
+    "plugAndPlayDesc": "Connect to any existing PBX. Works with your current SIP trunks.",
+    "openApis": "Open APIs",
+    "openApisDesc": "REST and WebSocket to integrate with CRM, databases or your own systems.",
+    "multilanguage": "Multilanguage",
+    "multilanguageDesc": "Supports Spanish, English and 70+ languages.",
+    "highAvailability": "High Availability",
+    "highAvailabilityDesc": "System designed to operate 24/7 with automatic failover.",
+    "lowLatency": "Low Latency",
+    "lowLatencyDesc": "Responses under 500ms for fluid conversations."
+  },
+"demo": {
+  "title": "Try the AI Agent",
+  "subtitle": "Real call to VenIA Voice",
+  "securityWarning": "Security setup:",
+  "securityWarningText": "Before using the softphone,",
+  "clickHere": "click here",
+  "acceptCertificate": "and accept the SSL certificate to establish a secure connection.",
+  "connecting": "Connecting to FreeSWITCH...",
+  "registered": "Extension registered",
+  "error": "Connection error",
+  "conversation": "CONVERSATION",
+  "waitingCall": "Waiting for call...",
+  "callAgent": "Call VenIA",
+  "calling": "Calling...",
+  "endCall": "End Call",
+  "connected": "Connected to VenIA Voice. Start talking!",
+  "activeCall": "Active call",
+  "showLogs": "Show debug logs",
+  "hideLogs": "Hide logs",
+  "noLogs": "No logs available",
+  "footer": "Real call • Your AI agent processes the conversation",
+  "configError": "Check environment variables on the server", 
+  "realTime":"Real-time conversation",
+  "customTest": "Test customers",
+  "waitConvertation": "Awaiting conversation...",
+  "transcription": "Transcripts will appear here in real time.",
+  "live":"Live",
+  "debt": "Debt",
+  "agentTiping": "Agent typing..."
+},
+  "cta": {
+    "title": "Ready to automate your",
+    "titleHighlight": "phone system?",
+    "description": "We implement VenIA Voice in your infrastructure. Local support in Venezuela.",
+    "contactSales": "Contact Sales"
+  },
+  "footer": {
+    "copyright": "VenIA Voice - AI Agent for PBX in Venezuela, LATAM and Europe",
+    "stack": "Asterisk • FreeSWITCH • Pipeline • Local IA Stack"
+  },
+  "sales": {
+    "connecting": "Connecting to sales...",
+    "callSales": "Call Sales",
+    "connected": "Connected with sales director"
+  },
+"documentation": {
+  "title": "Technical Documentation",
+  "subtitle": "Architecture, deployment and operation of VenIA Voice",
+  "backHome": "Back to Home",
+  "readMore": "View details",
+   "close": "Close",
+  
+  "architecture": "System Architecture",
+  "architectureDesc": "VenIA Voice is an AI-powered voice agent that integrates with existing PBX systems.",
+  "architectureDetail": "VenIA Voice architecture is based on a microservices infrastructure that communicates via WebSocket and SIP. The system consists of:\n\n• FreeSWITCH as central PBX server handling incoming and outgoing calls\n• AI Agent that processes audio in real-time using STT, LLM and TTS\n• Signaling Proxy that manages WebSocket connections with web clients\n• WebRTC to securely transmit audio between browser and FreeSWITCH\n• ESL module to control calls and events from Node.js\n\nThis architecture allows each component to be deployed independently, enabling horizontal scaling and high availability.",
+  
+  "components": "System Components",
+  "componentsDesc": "Modules that make up VenIA Voice solution.",
+  "componentsDetail": "VenIA Voice consists of the following components:\n\n• FreeSWITCH: Central PBX with WebRTC, ESL and mod_verto support\n• AI Agent: Pipeline with STT (Vosk), LLM (Llama/Mistral) and TTS (Azure/Neural)\n• Node.js Proxy: WebSocket signaling management between clients and FreeSWITCH\n• Web Client: React interface with WebRTC for browser-based calls\n• REST API: Endpoints for call management and configuration\n• Transcription System: Real-time transcription delivery to frontend",
+  
+  
+  "infrastructure": "Infrastructure",
+  "infrastructureDesc": "Deployment on virtualized servers with high availability.",
+    "infrastructureDetail": "Recommended infrastructure for VenIA Voice:\n\n• Virtualization: VMware ESXi, Proxmox VE or KVM\n• Server 1: FreeSWITCH (2 vCPU, 4GB RAM, 50GB SSD)\n• Server 2: AI Agent and services (4 vCPU, 8GB RAM, 100GB SSD)\n• Server 3: Proxy and API (2 vCPU, 2GB RAM, 20GB SSD)\n• Network: LAN with Internet connectivity and specific ports\n• Backup: UPS, router with failover and redundant storage\n\nThis architecture keeps critical services (FreeSWITCH) separated from AI processing services, preventing call impact during usage spikes.",
+  
+  "deployment": "Deployment",
+  "deploymentDesc": "Step-by-step guide to install and configure VenIA Voice.",
+   "deploymentDetail": "To deploy VenIA Voice follow these steps:\n\n1. Server preparation:\n   - Install Ubuntu Server 22.04 LTS or higher\n   - Configure firewall and required ports\n   - Install base dependencies (curl, git, build-essential)\n\n2. FreeSWITCH Installation:\n   - Install FreeSWITCH 1.10+\n   - Configure modules: mod_verto, mod_sofia, mod_esl\n   - Create extensions and configure SIP trunks\n   - Enable WebSocket on port 7443\n\n3. AI Agent Configuration:\n   - Install Python 3.11+ and dependencies\n   - Configure Vosk for STT (Spanish model)\n   - Configure LLM (Llama 3 or Mistral)\n   - Configure TTS (Azure Neural or local)\n\n4. Proxy Deployment:\n   - Install Node.js 20+\n   - Configure WebSocket server\n   - Connect to FreeSWITCH via ESL\n\n5. Frontend Deployment:\n   - Build React application\n   - Configure environment variables",
+  
+  "security": "Security",
+  "securityDesc": "Encrypted communications and access control.",
+   "securityDetail": "VenIA Voice implements multiple security layers:\n\n• Transport Layer Security (TLS): All WebSocket connections use WSS\n• Secure RTP (SRTP): Audio is encrypted between clients and FreeSWITCH\n• Authentication: SIP extensions with passwords and digest authentication\n• SSL/TLS Certificates: Support for self-signed and Let's Encrypt certificates\n• Access Control: Firewall with port-specific rules\n• Audit Logs: Call logging, events and errors\n• Input Sanitization: Protection against injection and SIP attacks\n\nFor production environments, it's recommended to use valid Let's Encrypt certificates and configure a reverse proxy (Nginx) as an additional security layer.",
+  
+  "faq": "FAQ",
+    "faqDetail": "Frequently asked questions about VenIA Voice:\n\nDo I need an existing PBX?\nYes, VenIA Voice integrates with FreeSWITCH. You can use your existing PBX or install a new one.\n\nCan I use the cloud instead of on-premise infrastructure?\nYes, VenIA Voice can be fully deployed in the cloud (AWS, Azure, Google Cloud).\n\nWhat AI models can I use?\nSTT: Vosk, Whisper, Deepgram. LLM: Llama 3, Mistral, GPT-4o. TTS: Azure Neural, Cartesia, ElevenLabs.\n\nWhat latency does the agent have?\nWith adequate hardware (<500ms for STT, <200ms for LLM, <300ms for TTS) total latency is <1.5 seconds.\n\nHow does it handle multiple simultaneous calls?\nThe system can handle multiple calls with adequate resources. Each call runs its own AI pipeline.\n\nIs a GPU necessary?\nNot mandatory, but recommended to reduce latency in LLM and STT. CPU can be used with optimized models.\n\nHow are recordings handled?\nRecordings are stored locally in WAV format and can be configured for S3 storage or automatic backup.",
+  
+  "techRequirements": "Infrastructure Requirements",
+  
+  "virtualizationTitle": "Virtualized Server",
+  "virtualizationDesc": "VMware ESXi, Proxmox or KVM. 2 vCPUs minimum, 4 vCPUs recommended.",
+  
+  "storageTitle": "SSD Storage",
+  "storageDesc": "50GB SSD for OS and logs. Additional storage for recordings.",
+  
+  "networkTitle": "Network & Connectivity",
+  "networkDesc": "LAN network with Internet connectivity. Ports 5060/5061 (SIP), 7443 (WebSocket), 8021 (ESL).",
+  
+  "freeswitchTitle": "FreeSWITCH 1.10+",
+  "freeswitchDesc": "Central PBX with WebRTC, ESL and mod_verto support.",
+  
+  "pythonTitle": "Python 3.11+",
+  "pythonDesc": "Runtime environment for AI pipeline and auxiliary services.",
+  
+  "nodejsTitle": "Node.js 20+",
+  "nodejsDesc": "Proxy server and WebSocket signaling services."
+}
+}

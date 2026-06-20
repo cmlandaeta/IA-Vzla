@@ -1,0 +1,172 @@
+{
+  "nav": {
+    "features": "Características",
+    "pipeline": "Pipeline",
+    "demo": "Demo",
+    "integration": "Integración",
+    "documentation": "Documentación",
+    "requestAccess": "Solicitar acceso"
+  },
+  "hero": {
+    "badge": "IA para PBX en Venezuela, América y Europa",
+    "title": "Agente IA para",
+    "titleAsterisk": "Asterisk",
+    "titleAnd": "y",
+    "titleFreeswitch": "FreeSWITCH",
+    "description": "Integra inteligencia artificial a tu central telefónica e IVR en minutos. Atención al cliente, cobranzas, recordatorios y más, 100% local o en la nube.",
+    "tryNow": "Probar agente ahora",
+    "documentation": "Ver documentación"
+  },
+  "integration": {
+    "title": "Integración",
+    "titleHighlight": "simple y directa",
+    "description": "Conecta VenIA Voice a tu PBX existente en menos de 5 minutos sin cambiar tu infraestructura",
+    "did": "DID",
+    "clientCalls": "Tu cliente llama",
+    "yourPbx": "Tu PBX",
+    "veniaVoice": "VenIA Voice",
+    "localAgent": "Agente IA local",
+    "response": "Respuesta IA",
+    "naturalVoice": "Voz natural",
+    "process": "Proceso: Tu cliente llama — Tu agente procesa la llamada y responde con IA en tiempo real"
+  },
+"pipeline": {
+  "title": "Pipeline de Voz",
+  "titleHighlight": "optimizado",
+  "description": "Arquitectura de procesamiento de voz con latencia ultra baja para conversaciones fluidas y naturales",
+  
+  "stt": "STT (Speech-to-Text)",
+  "sttSub": "Reconocimiento de voz",
+  "sttDesc": "Vosk local con modelo en español optimizado para tu infraestructura. Procesamiento de audio en tiempo real sin dependencia de nube, garantizando privacidad y baja latencia.",
+  "sttMetric": "98% precisión en español",
+  "sttDetail": "• Modelo Vosk configurado para español venezolano\n• Procesamiento local, sin enviar audio a terceros\n• Latencia <500ms para frases cortas\n• Soporte para audio de 16kHz desde WebRTC\n• Envía transcripciones parciales y finales en tiempo real",
+  
+  "llm": "LLM (Large Language Model)",
+  "llmSub": "Procesamiento de lenguaje natural",
+  "llmDesc": "Modelo Llama 3.2 (1B) optimizado para ejecución local. Procesa la intención del usuario, extrae información clave y genera respuestas coherentes en español.",
+  "llmMetric": "<500ms por inferencia",
+  "llmDetail": "• Modelo Llama 3.2 (1B) en ejecución local\n• Optimizado para tareas de cobranzas y atención al cliente\n• Extracción de identificación, fechas y compromisos de pago\n• Respaldo offline sin dependencia de API externas\n• Contexto de conversación para respuestas coherentes",
+  
+  "tts": "TTS (Text-to-Speech)",
+  "ttsSub": "Síntesis de voz",
+  "ttsDesc": "Síntesis de voz en español con voz natural y expresiva. Generación de audio en tiempo real para respuestas fluidas y humanas.",
+  "ttsMetric": "Voz natural y emocional",
+  "ttsDetail": "• Voz 'es-VE-SebastianNeural' con entonación natural\n• Síntesis en tiempo real con latencia <800ms\n• Soporte para frases largas y números\n• Archivos de audio temporales para reproducción en llamada\n• Fallback a speak nativo de FreeSWITCH si falla",
+  
+  "footer": "* Todo el pipeline se ejecuta 100% local en tu infraestructura. Sin dependencia de nube, garantizando soberanía de datos y disponibilidad constante."
+},
+  "features": {
+    "dataSovereignty": "Soberanía de datos",
+    "dataSovereigntyDesc": "Todo el procesamiento local. Tus conversaciones nunca salen de tu infraestructura.",
+    "plugAndPlay": "Plug & Play",
+    "plugAndPlayDesc": "Conecta a cualquier PBX existente. Funciona con tus troncales SIP actuales.",
+    "openApis": "APIs abiertas",
+    "openApisDesc": "REST y WebSocket para integrar con CRM, bases de datos o sistemas propios.",
+    "multilanguage": "Multilenguaje",
+    "multilanguageDesc": "Soporta español, inglés y más de 70 idiomas.",
+    "highAvailability": "Alta disponibilidad",
+    "highAvailabilityDesc": "Sistema diseñado para operar 24/7 con respaldo automático.",
+    "lowLatency": "Baja latencia",
+    "lowLatencyDesc": "Respuestas en menos de 500ms para conversaciones fluidas."
+  },
+"demo": {
+  "title": "Prueba el agente",
+  "subtitle": "Llamada real a VenIA Voice",
+  "securityWarning": "Configuración de seguridad:",
+  "securityWarningText": "Por favor, antes de usar el DEMO,",
+  "clickHere": "haz clic aquí",
+  "acceptCertificate": "y acepta el certificado SSL para que la extension se registre de manera segura.",
+  "connecting": "Conectando a FreeSWITCH...",
+  "registered": "Extensión registrada",
+  "error": " Error de conexión",
+  "conversation": "CONVERSACIÓN",
+  "waitingCall": "Esperando llamada...",
+  "callAgent": "Llamar a VenIA",
+  "calling": "Llamando...",
+  "endCall": "Finalizar llamada",
+  "connected": "Conectado al agente VenIA Voice. ¡Empieza a hablar!",
+  "activeCall": "Llamada activa",
+  "showLogs": "Mostrar logs de depuración",
+  "hideLogs": "Ocultar logs",
+  "noLogs": "No hay logs disponibles",
+  "footer": "Llamada real • Tu agente IA procesa la conversación",
+  "configError": "Verifica las variables de entorno en el servidor",
+  "realTime":"Conversacion en Tiempo Real",
+  "customTest": "Clientes de Prueba",
+  "waitConvertation": "Esperando conversacion...",
+  "transcription": "Las transcripciones aparecerán aquí en tiempo real.",
+  "live":"En vivo",
+  "debt": "Deuda",
+  "agentTiping": "Agente escribiendo..."
+
+},
+  "cta": {
+    "title": "¿Listo para automatizar tu",
+    "titleHighlight": "central telefónica?",
+    "description": "Implementamos VenIA Voice en tu infraestructura. Soporte local en Venezuela.",
+    "contactSales": "Contactar ventas"
+  },
+  "footer": {
+    "copyright": "VenIA Voice - Agente IA para PBX en Venezuela, América  y EUROPA",
+    "stack": "Asterisk • FreeSWITCH • Pipeline • Local IA Stack"
+  },
+  "sales": {
+    "connecting": "Conectando con ventas...",
+    "callSales": "Llamar a ventas",
+    "connected": "Conectado con el director de ventas"
+  },
+"documentation": {
+  "title": "Documentación Técnica",
+  "subtitle": "Arquitectura, despliegue y operación de VenIA Voice",
+  "backHome": "Volver al inicio",
+  "readMore": "Ver detalles",
+   "close": "Cerrar",
+  
+  "architecture": "Arquitectura del Sistema",
+  "architectureDesc": "VenIA Voice es un agente de voz basado en IA que se integra con PBX existentes. La solución está compuesta por módulos independientes que pueden desplegarse en infraestructura local o en la nube.",
+  "architectureDetail": "La arquitectura de VenIA Voice se basa en una infraestructura de microservicios que se comunican a través de WebSocket y SIP. El sistema está compuesto por:\n\n• FreeSWITCH como servidor PBX central que maneja las llamadas entrantes y salientes\n• Agente IA que procesa el audio en tiempo real usando STT, LLM y TTS\n• Proxy de señalización que gestiona las conexiones WebSocket con los clientes web\n• WebRTC para transmitir audio de forma segura entre el navegador y FreeSWITCH\n• Módulo ESL para controlar llamadas y eventos desde Node.js\n\nEsta arquitectura permite desplegar cada componente de forma independiente, facilitando el escalado horizontal y la alta disponibilidad.",
+  
+  "components": "Componentes del Sistema",
+  "componentsDesc": "Módulos que conforman la solución de VenIA Voice.",
+  "componentsDetail": "VenIA Voice está compuesto por los siguientes componentes:\n\n• FreeSWITCH: PBX central con soporte WebRTC, ESL y mod_verto\n• Agente IA: Pipeline con STT (Vosk), LLM (Llama/Mistral) y TTS (Azure/Neural)\n• Proxy Node.js: Gestión de señalización WebSocket entre clientes y FreeSWITCH\n• Cliente Web: Interfaz React con WebRTC para llamadas desde el navegador\n• API REST: Endpoints para gestión de llamadas y configuración\n• Sistema de transcripción: Envío en tiempo real de transcripciones al frontend",
+
+
+  "infrastructure": "Infraestructura",
+  "infrastructureDesc": "Despliegue en servidores virtualizados con alta disponibilidad.",
+   "infrastructureDetail": "La infraestructura recomendada para VenIA Voice es:\n\n• Virtualización: VMware ESXi, Proxmox VE o KVM\n• Servidor 1: FreeSWITCH (2 vCPU, 4GB RAM, 50GB SSD)\n• Servidor 2: Agente IA y servicios (4 vCPU, 8GB RAM, 100GB SSD)\n• Servidor 3: Proxy y API (2 vCPU, 2GB RAM, 20GB SSD)\n• Red: LAN con conectividad a Internet y puertos específicos\n• Respaldo: UPS, router con failover y almacenamiento redundante\n\nEsta arquitectura permite mantener los servicios críticos (FreeSWITCH) separados de los servicios de procesamiento de IA, evitando impactos en las llamadas durante picos de uso.",
+
+  
+  "deployment": "Despliegue",
+  "deploymentDesc": "Guía paso a paso para instalar y configurar VenIA Voice en tu infraestructura, incluyendo configuración de red, certificados SSL y troncales SIP.",
+    "deploymentDetail": "Para desplegar VenIA Voice sigue estos pasos:\n\n1. Preparación del servidor:\n   - Instalar Ubuntu Server 22.04 LTS o superior\n   - Configurar firewall y puertos necesarios\n   - Instalar dependencias base (curl, git, build-essential)\n\n2. Instalación de FreeSWITCH:\n   - Instalar FreeSWITCH 1.10+\n   - Configurar módulos: mod_verto, mod_sofia, mod_esl\n   - Crear extensiones y configurar troncales SIP\n   - Habilitar WebSocket en el puerto WSS\n\n3. Configuración del Agente IA:\n   - Instalar Python 3.11+ y dependencias\n   - Configurar Vosk para STT (modelo español)\n   - Configurar LLM local (Llama 3 o Mistral)\n   - Configurar TTS (Azure Neural o local)\n\n4. Despliegue del Proxy:\n   - Instalar Node.js 20+\n   - Configurar WebSocket server\n   - Conectar a FreeSWITCH vía ESL\n\n5. Despliegue del Frontend:\n   - Compilar la aplicación React\n   - Configurar variables de entorno",
+  
+  "security": "Seguridad",
+  "securityDesc": "Comunicaciones cifradas con TLS/SRTP, gestión de certificados, autenticación de extensiones y control de acceso.",
+    "securityDetail": "VenIA Voice implementa múltiples capas de seguridad:\n\n• Transport Layer Security (TLS): Todas las conexiones WebSocket usan WSS\n• Secure RTP (SRTP): El audio se transmite cifrado entre clientes y FreeSWITCH\n• Autenticación: Extensiones SIP con contraseñas y autenticación digest\n• Certificados SSL/TLS: Soporte para certificados autofirmados y Let's Encrypt\n• Control de acceso: Firewall con reglas específicas por puerto\n• Logs de auditoría: Registro de llamadas, eventos y errores\n• Sanitización de entradas: Protección contra inyección y ataques SIP\n\nPara entornos de producción se recomienda usar certificados válidos de Let's Encrypt y configurar un proxy inverso (Nginx) como capa adicional de seguridad.",
+  
+  "faq": "Preguntas Frecuentes",
+  "faqDesc": "Soluciones a problemas comunes de instalación, configuración y operación del agente IA.",
+    "faqDetail": "Preguntas frecuentes sobre VenIA Voice:\n\n¿Necesito una PBX existente?\nSí, VenIA Voice se integra con FreeSWITCH. Puedes usar tu PBX actual o instalar una nueva.\n\n¿Puedo usar la nube en lugar de infraestructura local?\nSí, VenIA Voice puede desplegarse completamente en la nube (AWS, Azure, Google Cloud).\n\n¿Qué modelos de IA puedo usar?\nSTT: Vosk, Whisper, Deepgram. LLM: Llama 3, Mistral, GPT-4o. TTS: Azure Neural, Cartesia, ElevenLabs.\n\n¿Qué latencia tiene el agente?\nCon hardware adecuado (<500ms para STT, <200ms para LLM, <300ms para TTS) la latencia total es de <1.5 segundos.\n\n¿Cómo maneja múltiples llamadas simultáneas?\nEl sistema puede manejar múltiples llamadas con recursos adecuados. Cada llamada ejecuta su propio pipeline de IA.\n\n¿Es necesario tener GPU?\nNo es obligatorio, pero recomendado para reducir latencia en LLM y STT. Se puede usar CPU con modelos optimizados.\n\n¿Cómo se manejan las grabaciones?\nLas grabaciones se almacenan localmente en formato WAV y pueden configurarse para almacenamiento en S3 o backup automático.",
+  
+  
+  "techRequirements": "Requisitos de Infraestructura",
+  
+  "virtualizationTitle": "Servidor Virtualizado",
+  "virtualizationDesc": "VMware ESXi, Proxmox o KVM. 2 vCPUs mínimo, 4 vCPUs recomendado.",
+  
+  "storageTitle": "Almacenamiento SSD",
+  "storageDesc": "50GB SSD para sistema operativo y logs. Almacenamiento adicional para grabaciones.",
+  
+  "networkTitle": "Red y Conectividad",
+  "networkDesc": "Red LAN con conectividad a Internet. Puertos 5060/5061 (SIP), 7443 (WebSocket), 8021 (ESL).",
+  
+  "freeswitchTitle": "FreeSWITCH 1.10+",
+  "freeswitchDesc": "PBX central con soporte WebRTC, ESL y módulo mod_verto.",
+  
+  "pythonTitle": "Python 3.11+",
+  "pythonDesc": "Entorno de ejecución para el pipeline de IA y servicios auxiliares.",
+  
+  "nodejsTitle": "Node.js 20+",
+  "nodejsDesc": "Servidor proxy y servicios de señalización WebSocket."
+}
+}

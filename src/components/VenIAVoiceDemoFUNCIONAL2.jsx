@@ -1,9 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
-import { Phone, PhoneOff, Loader2, Mic, Volume2, ChevronDown, ChevronUp, MessageSquare, Wifi, WifiOff } from 'lucide-react';
+import { Phone, PhoneOff, Loader2, Mic, Volume2, ChevronDown, ChevronUp, MessageSquare } from 'lucide-react';
 import { UserAgent, Registerer, Inviter } from 'sip.js';
 import { URI } from 'sip.js';
 import { useLanguage } from '../contexts/LanguageContext';
-import { TranscriptionPanel } from './TranscriptionPanel';
 
 // Leer variables de entorno
 const SIP_CONFIG = {
@@ -36,15 +35,13 @@ export const VenIAVoiceDemo = () => {
   const [showLogs, setShowLogs] = useState(false);
   const [logs, setLogs] = useState([]);
   const [configError, setConfigError] = useState(null);
-  const [currentExtension, setCurrentExtension] = useState(extension);
-  const [currentCallUuid, setCurrentCallUuid] = useState(null);
+   const [currentExtension, setCurrentExtension] = useState(extension);
   
   const userAgentRef = useRef(null);
   const registererRef = useRef(null);
   const currentSessionRef = useRef(null);
   const remoteAudioRef = useRef(null);
   const durationIntervalRef = useRef(null);
-  const transcriptionWsRef = useRef(null);
   
   // Validar configuración al inicio
   useEffect(() => {
@@ -299,17 +296,6 @@ export const VenIAVoiceDemo = () => {
     }
     
     setIsCalling(true);
-
-      // Generar un ID único para este cliente (usar la extensión actual)
-  const clientId = currentExtension.toString(); // Usar la extensión como identificador
-  
-  // Registrar este cliente en el WebSocket de transcripciones
-  if (transcriptionWsRef.current && transcriptionWsRef.current.readyState === WebSocket.OPEN) {
-    transcriptionWsRef.current.send(JSON.stringify({
-      type: 'register-call',
-      callUuid: clientId
-    }));
-  }
     
     try {
       const targetUri = new URI('sip', SIP_CONFIG.agentExtension, SIP_CONFIG.domain);
@@ -330,10 +316,7 @@ export const VenIAVoiceDemo = () => {
           case 'Established':
             setIsCallActive(true);
             setIsCalling(false);
-              // Usar clientId en lugar de generar UUID
-            setCurrentCallUuid(clientId);
-        
-            //setTranscript('🎙️ ' + t('demo.connected'));
+            setTranscript('🎙️ ' + t('demo.connected'));
             setupRemoteAudio(inviter);
             addLog('✅ Call established with AI agent');
             break;
@@ -410,9 +393,7 @@ export const VenIAVoiceDemo = () => {
         {t('demo.subtitle')}
       </p>
 
-      
-
-           {/* Aviso de seguridad SSL */}
+      {/* Aviso de seguridad SSL */}
       <div className="bg-yellow-500/10 border border-yellow-500 rounded-lg p-4 mb-4">
         <p className="text-sm text-yellow-700 dark:text-yellow-300">
           ⚠️ <strong>{t('demo.securityWarning')}</strong> {t('demo.securityWarningText')}
@@ -426,29 +407,25 @@ export const VenIAVoiceDemo = () => {
           {t('demo.acceptCertificate')}
         </p>
       </div>
-
-        {/* Panel de transcripción y clientes */}
-      <TranscriptionPanel callUuid={currentCallUuid} clientId={currentExtension.toString()} />
       
- {/* Estado de conexión */}
-<div className="flex items-center justify-center gap-2 mb-6">
-  {isConnecting ? (
-    <>
-      <Wifi className="h-4 w-4 text-yellow-500 animate-pulse" />
-      <span className="text-sm text-yellow-500">{t('demo.connecting')}</span>
-    </>
-  ) : isRegistered ? (
-    <>
-      <Wifi className="h-4 w-4 text-green-500" />
-      <span className="text-sm text-green-500">{t('demo.registered')}</span>
-    </>
-  ) : (
-    <>
-      <WifiOff className="h-4 w-4 text-red-500" />
-      <span className="text-sm text-red-500">{t('demo.error')}</span>
-    </>
-  )}
-</div>
+      {/* Estado de conexión */}
+      <div className="flex items-center justify-center gap-2 mb-6">
+        <div className={`h-2 w-2 rounded-full ${isRegistered ? 'bg-green-500' : isConnecting ? 'bg-yellow-500 animate-pulse' : 'bg-red-500'}`}></div>
+        <span className="text-sm text-gray-600 dark:text-gray-400">
+          {isConnecting ? t('demo.connecting') : isRegistered ? t('demo.registered') : t('demo.error')}
+        </span>
+      </div>
+      
+      {/* Área de conversación/transcript */}
+      <div className="bg-gray-50 dark:bg-gray-900 rounded-xl p-4 mb-6 min-h-[120px]">
+        <div className="flex items-center gap-2 mb-3 border-b border-gray-200 dark:border-gray-700 pb-2">
+          <MessageSquare className="h-4 w-4 text-yellow-500" />
+          <span className="text-xs font-medium text-gray-500 dark:text-gray-400">{t('demo.conversation')}</span>
+        </div>
+        <div className="text-sm text-gray-700 dark:text-gray-300 whitespace-pre-wrap">
+          {transcript || t('demo.waitingCall')}
+        </div>
+      </div>
       
       {/* Controles de llamada */}
       <div className="flex justify-center gap-4 mb-4">
