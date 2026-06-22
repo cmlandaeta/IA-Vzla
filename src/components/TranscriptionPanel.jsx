@@ -18,7 +18,7 @@ export const TranscriptionPanel = ({ callUuid, clientId }) => {
   useEffect(() => {
     // Conectar al WebSocket con clientId
     const wsUrl = clientId 
-      ? `ws://${urlTranscription}/?clientId=${clientId}`
+      ? `wss://${urlTranscription}/?clientId=${clientId}`
       : null;
     
     if (!wsUrl) {
