@@ -13,9 +13,29 @@ export const TranscriptionPanel = ({ callUuid, clientId }) => {
   const wsRef = useRef(null);
   const containerRef = useRef(null);
   const { t } = useLanguage();
-  const urlTranscription = import.meta.env.VITE_URL_TRANSCRIPTION 
+  const urlTranscription = import.meta.env.VITE_URL_TRANSCRIPTION;
+  const [connectionError, setConnectionError] = useState(null);  
+
+   // Verificar si SSL ya fue aceptado
+  const isSslAccepted = () => {
+    return localStorage.getItem('ssl_accepted') === 'true';
+  };
+
 
   useEffect(() => {
+
+    //   // Si no hay clientId o no está aceptado SSL, no conectar
+    // if (!clientId) {
+    //   console.log('⏳ Esperando clientId para conectar WebSocket');
+    //   return;
+    // }
+
+    // // Verificar SSL
+    // if (!isSslAccepted()) {
+    //   console.log('⏳ Esperando aceptación SSL');
+    //   setConnectionError('SSL_PENDING');
+    //   return;
+    // }
     // Conectar al WebSocket con clientId
     const wsUrl = clientId 
       ? `wss://${urlTranscription}/?clientId=${clientId}`
@@ -77,6 +97,14 @@ export const TranscriptionPanel = ({ callUuid, clientId }) => {
 
     ws.onerror = (error) => {
       console.error('❌ WebSocket error:', error);
+
+      //   setConnectionError('CONNECTION_ERROR');
+      // // Si el error es de SSL, mostrar mensaje
+      // if (error.message && error.message.includes('certificate')) {
+      //   setConnectionError('SSL_ERROR');
+      //   // Limpiar el flag de SSL aceptado para forzar nueva aceptación
+      //   localStorage.removeItem('ssl_accepted');
+      // }
       setTimeout(() => {
         if (wsRef.current && wsRef.current.readyState === WebSocket.CLOSED) {
           console.log('🔄 Reintentando conexión WebSocket...');

@@ -4,6 +4,7 @@ import { UserAgent, Registerer, Inviter } from 'sip.js';
 import { URI } from 'sip.js';
 import { useLanguage } from '../contexts/LanguageContext';
 import { TranscriptionPanel } from './TranscriptionPanel';
+import {SecurityWarning}  from './SecurityWarning'
 
 // Leer variables de entorno
 const SIP_CONFIG = {
@@ -12,6 +13,7 @@ const SIP_CONFIG = {
   username: import.meta.env.VITE_SIP_USERNAME,
   password: import.meta.env.VITE_SIP_PASSWORD,
   wssUrl: import.meta.env.VITE_SIP_WSS_URL,
+  wssUrl2:import.meta.env.VITE_URL_TRANSCRIPTION,
   agentExtension: import.meta.env.VITE_AGENT_EXTENSION || '99990',
   expires: parseInt(import.meta.env.VITE_SIP_EXPIRES || '3600'),
   extensionRangeStart: parseInt(import.meta.env.VITE_EXTENSION_RANGE_START || '1011'),
@@ -38,6 +40,8 @@ export const VenIAVoiceDemo = () => {
   const [configError, setConfigError] = useState(null);
   const [currentExtension, setCurrentExtension] = useState(extension);
   const [currentCallUuid, setCurrentCallUuid] = useState(null);
+  const [sslAccepted, setSslAccepted] = useState(false);
+  const [showSecurityWarning, setShowSecurityWarning] = useState(true);
   
   const userAgentRef = useRef(null);
   const registererRef = useRef(null);
@@ -59,6 +63,16 @@ export const VenIAVoiceDemo = () => {
       setIsConnecting(false);
     }
   }, []);
+
+    const handleSslAccept = () => {
+    setSslAccepted(true);
+    setShowSecurityWarning(false);
+    // Si ya hay un clientId, intentar reconectar
+    // if (clientId) {
+    //   // Forzar reconexión del WebSocket
+    //   // Puedes disparar un efecto o simplemente recargar la página
+    // }
+  };
   
   // Agregar log
   const addLog = (message, isError = false) => {
@@ -339,11 +353,29 @@ export const VenIAVoiceDemo = () => {
             className="underline font-bold mx-1"
           >
             {t('demo.clickHere')}
+             <a 
+            href={SIP_CONFIG.wssUrl2?.replace('wss://', 'https://').replace('ws://', 'http://')} 
+            target="_blank" 
+            className="underline font-bold mx-1"
+          >
+            {t('demo.clickHere')}
           </a>
+          </a>
+         
+       
           {t('demo.acceptCertificate')}
         </p>
       </div>
 
+      {/* Aviso de seguridad SSL - VERSIÓN MEJORADA */}
+    {/* {showSecurityWarning && !sslAccepted && (
+      <SecurityWarning 
+        wssUrl={SIP_CONFIG.wssUrl}
+        onAccept={handleSslAccept}
+      />
+    )} */}
+
+    
         {/* Panel de transcripción y clientes */}
       <TranscriptionPanel callUuid={currentCallUuid} clientId={currentExtension.toString()} />
       

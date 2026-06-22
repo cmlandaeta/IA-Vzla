@@ -1,23 +1,33 @@
 import { useState, useEffect, useRef } from 'react';
 import { Phone, PhoneOff, Loader2 } from 'lucide-react';
-import { UserAgent, Inviter } from 'sip.js';
+import { UserAgent, Inviter, Registerer } from 'sip.js';
 import { URI } from 'sip.js';
 import { useLanguage } from '../contexts/LanguageContext';
 
 const SIP_CONFIG = {
   domain: import.meta.env.VITE_SIP_DOMAIN,
   username: import.meta.env.VITE_EXTEN_BUTON_SALES,
-  //password: import.meta.env.VITE_SIP_PASSWORD,
-  password: '1003',
+  password: import.meta.env.VITE_SIP_PASSWORD,
   wssUrl: import.meta.env.VITE_SIP_WSS_URL,
   salesExtension: import.meta.env.VITE_SALES_EXTENSION,
+  extensionRangeStart: parseInt(import.meta.env.VITE_EXTENSION_RANGE_START || '1040'),
+  extensionRangeEnd: parseInt(import.meta.env.VITE_EXTENSION_RANGE_END || '1050')
+  
 };
+
+// Generar ID único para esta sesión
+const sessionId = Math.random().toString(36).substring(2, 8);
+const extension = Math.floor(Math.random() * 
+  (SIP_CONFIG.extensionRangeEnd - SIP_CONFIG.extensionRangeStart + 1) + 
+  SIP_CONFIG.extensionRangeStart
+);
 
 export const SalesCallButton = ({ className = "" }) => {
   const { t } = useLanguage();
   const [isRegistered, setIsRegistered] = useState(false);
   const [isCallActive, setIsCallActive] = useState(false);
   const [isCalling, setIsCalling] = useState(false);
+  const [currentExtension, setCurrentExtension] = useState(extension);
   
   const userAgentRef = useRef(null);
   const currentSessionRef = useRef(null);
@@ -27,26 +37,28 @@ export const SalesCallButton = ({ className = "" }) => {
   useEffect(() => {
     const initUserAgent = async () => {
       try {
-        const uri = new URI('sip', SIP_CONFIG.username, SIP_CONFIG.domain);
+        const uri = new URI('sip', currentExtension.toString(), SIP_CONFIG.domain);
         
         const userAgent = new UserAgent({
           uri,
           transportOptions: { server: SIP_CONFIG.wssUrl },
-          authorizationUsername: SIP_CONFIG.username,
+          authorizationUsername: currentExtension.toString(),
           authorizationPassword: SIP_CONFIG.password,
           displayName: 'VenIA Sales',
-          userAgentString: 'VenIA Voice/1.0',
+          userAgentString: 'Ventas VenIA Voice/1.0',
         });
         
         userAgentRef.current = userAgent;
         await userAgent.start();
+        const registerer = new Registerer(userAgent, { expires: SIP_CONFIG.expires });
+        await registerer.register();
         setIsRegistered(true);
         
         // Crear elemento de audio
-        let audioEl = document.getElementById('sales-remote-audio');
+        let audioEl = document.getElementById(`venia-remote-audio-${sessionId}`);
         if (!audioEl) {
           audioEl = document.createElement('audio');
-          audioEl.id = 'sales-remote-audio';
+          audioEl.id = `venia-remote-audio-${sessionId}`;
           audioEl.autoplay = true;
           audioEl.style.display = 'none';
           document.body.appendChild(audioEl);
@@ -168,9 +180,9 @@ export const SalesCallButton = ({ className = "" }) => {
       className={`${className} ${isCalling ? 'opacity-50 cursor-wait' : ''}`}
     >
       {isCalling ? (
-        <Loader2 className="h-5 w-5 animate-spin mr-2" />
+        <Loader2 className="h-5 w-5 animate-spin mr-2 " />
       ) : (
-        <Phone className="h-5 w-5 mr-2" />
+        <Phone className="h-5 w-5 mr-2 " />
       )}
       {isCalling ? t('sales.connecting') : t('sales.callSales')}
     </button>
