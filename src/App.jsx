@@ -28,7 +28,9 @@ import {
   Globe,
   Server,
   Database,
-  FileText
+  FileText,
+  MessageCircle,
+  PhoneCall, 
 } from "lucide-react";
 
 // Componente para animación al hacer scroll
@@ -536,19 +538,35 @@ const ctaRef = useRef(null);
       </section>
 
       {/* CTA con botón de ventas funcional */}
-      <section id="ventas"  ref={ctaRef} className="py-20 border-t border-yellow-500/20 bg-gradient-to-r from-yellow-500/5 to-transparent">
-        <div className="max-w-4xl mx-auto text-center px-4">
-          <ScrollReveal>
-            <h2 className="text-3xl font-bold mb-4 text-gray-900 dark:text-white">
-              {t('cta.title')} <span className="text-yellow-500">{t('cta.titleHighlight')}</span>
-            </h2>
-            <p className="text-gray-600 dark:text-gray-400 mb-8">
-              {t('cta.description')}
-            </p>
-            <SalesCallButton className="bg-yellow-500 hover:bg-yellow-600 text-black px-8 py-3 rounded-lg font-bold text-lg inline-flex items-center gap-2 shadow-lg transition-all" />
-          </ScrollReveal>
-        </div>
-      </section>
+   {/* CTA con botón de ventas funcional */}
+<section id="ventas" ref={ctaRef} className="py-20 border-t border-yellow-500/20 bg-gradient-to-r from-yellow-500/5 to-transparent">
+  <div className="max-w-4xl mx-auto text-center px-4">
+    <ScrollReveal>
+      <h2 className="text-3xl font-bold mb-4 text-gray-900 dark:text-white">
+        {t('cta.title')} <span className="text-yellow-500">{t('cta.titleHighlight')}</span>
+      </h2>
+      <p className="text-gray-600 dark:text-gray-400 mb-8">
+        {t('cta.description')}
+      </p>
+      
+      <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        {/* Botón de llamada a ventas */}
+        <SalesCallButton className="bg-yellow-500 hover:bg-yellow-600 text-black px-8 py-3 rounded-lg font-bold text-lg inline-flex items-center gap-2 shadow-lg transition-all" />
+        
+        {/* Botón de WhatsApp */}
+        <a
+          href="https://wa.me/584242211795"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-green-500 hover:bg-green-600 text-white px-8 py-3 rounded-lg font-bold text-lg inline-flex items-center gap-2 shadow-lg transition-all transform hover:scale-105"
+        >
+          <MessageCircle className="h-5 w-5" />
+          WhatsApp
+        </a>
+      </div>
+    </ScrollReveal>
+  </div>
+</section>
 
       {/* Footer */}
       <footer className="bg-gray-50 dark:bg-gray-900 border-t border-yellow-500/20 py-8">
