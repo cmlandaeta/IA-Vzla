@@ -555,7 +555,7 @@ const ctaRef = useRef(null);
         
         {/* Botón de WhatsApp */}
         <a
-          href="https://wa.me/584242211795"
+          href="https://wa.me/+584242211795"
           target="_blank"
           rel="noopener noreferrer"
           className="bg-green-500 hover:bg-green-600 text-white px-8 py-3 rounded-lg font-bold text-lg inline-flex items-center gap-2 shadow-lg transition-all transform hover:scale-105"

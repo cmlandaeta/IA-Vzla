@@ -55,10 +55,10 @@ export const SalesCallButton = ({ className = "" }) => {
         setIsRegistered(true);
         
         // Crear elemento de audio
-        let audioEl = document.getElementById(`venia-remote-audio-${sessionId}`);
+        let audioEl = document.getElementById(`venta-remote-audio-${sessionId}`);
         if (!audioEl) {
           audioEl = document.createElement('audio');
-          audioEl.id = `venia-remote-audio-${sessionId}`;
+          audioEl.id = `venta-remote-audio-${sessionId}`;
           audioEl.autoplay = true;
           audioEl.style.display = 'none';
           document.body.appendChild(audioEl);
@@ -174,6 +174,7 @@ export const SalesCallButton = ({ className = "" }) => {
   }
 
   return (
+    <div>
     <button
       onClick={callSales}
       disabled={isCalling}
@@ -186,5 +187,11 @@ export const SalesCallButton = ({ className = "" }) => {
       )}
       {isCalling ? t('sales.connecting') : t('sales.callSales')}
     </button>
+    <div>
+        {/* Elemento de audio oculto */}
+      <audio id="venta-remote-audio" style={{ display: 'none' }} />
+    </div>
+
+    </div>
   );
 };

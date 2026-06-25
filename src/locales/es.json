@@ -37,15 +37,15 @@
   
   "stt": "STT (Speech-to-Text)",
   "sttSub": "Reconocimiento de voz",
-  "sttDesc": "Vosk local con modelo en español optimizado para tu infraestructura. Procesamiento de audio en tiempo real sin dependencia de nube, garantizando privacidad y baja latencia.",
+  "sttDesc": "Modelo local en español e inglés optimizado para tu infraestructura. Procesamiento de audio en tiempo real sin dependencia de nube, garantizando privacidad y baja latencia.",
   "sttMetric": "98% precisión en español",
   "sttDetail": "• Modelo Vosk configurado para español venezolano\n• Procesamiento local, sin enviar audio a terceros\n• Latencia <500ms para frases cortas\n• Soporte para audio de 16kHz desde WebRTC\n• Envía transcripciones parciales y finales en tiempo real",
   
   "llm": "LLM (Large Language Model)",
   "llmSub": "Procesamiento de lenguaje natural",
-  "llmDesc": "Modelo Llama 3.2 (1B) optimizado para ejecución local. Procesa la intención del usuario, extrae información clave y genera respuestas coherentes en español.",
+  "llmDesc": "Modelo Llama optimizado para ejecución local. Procesa la intención del usuario, extrae información clave y genera respuestas coherentes en español.",
   "llmMetric": "<500ms por inferencia",
-  "llmDetail": "• Modelo Llama 3.2 (1B) en ejecución local\n• Optimizado para tareas de cobranzas y atención al cliente\n• Extracción de identificación, fechas y compromisos de pago\n• Respaldo offline sin dependencia de API externas\n• Contexto de conversación para respuestas coherentes",
+  "llmDetail": "• Modelo Llama en ejecución local\n• Optimizado para tareas de cobranzas y atención al cliente\n• Extracción de identificación, fechas y compromisos de pago\n• Respaldo offline sin dependencia de API externas\n• Contexto de conversación para respuestas coherentes",
   
   "tts": "TTS (Text-to-Speech)",
   "ttsSub": "Síntesis de voz",

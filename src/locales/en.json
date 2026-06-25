@@ -37,15 +37,15 @@
   
   "stt": "STT (Speech-to-Text)",
   "sttSub": "Speech recognition",
-  "sttDesc": "Vosk on-premise with Spanish model optimized for your infrastructure. Real-time audio processing without cloud dependency, ensuring privacy and low latency.",
+  "sttDesc": "On-premise with Spanish & English model optimized for your infrastructure. Real-time audio processing without cloud dependency, ensuring privacy and low latency.",
   "sttMetric": "98% accuracy in Spanish",
-  "sttDetail": "• Vosk model configured for Venezuelan Spanish\n• Local processing, no audio sent to third parties\n• <500ms latency for short phrases\n• Support for 16kHz audio from WebRTC\n• Sends partial and final transcriptions in real-time",
+  "sttDetail": "•Model configured for Venezuelan Spanish\n• Local processing, no audio sent to third parties\n• <500ms latency for short phrases\n• Support for 16kHz audio from WebRTC\n• Sends partial and final transcriptions in real-time",
   
   "llm": "LLM (Large Language Model)",
   "llmSub": "Natural language processing",
-  "llmDesc": "Llama 3.2 (1B) model optimized for local execution. Processes user intent, extracts key information, and generates coherent responses in Spanish.",
+  "llmDesc": "Llama  model optimized for local execution. Processes user intent, extracts key information, and generates coherent responses in Spanish.",
   "llmMetric": "<500ms per inference",
-  "llmDetail": "• Llama 3.2 (1B) model running locally\n• Optimized for collections and customer service tasks\n• Extraction of identification, dates and payment commitments\n• Offline fallback without external API dependency\n• Conversation context for coherent responses",
+  "llmDetail": "• Llama model running locally\n• Optimized for collections and customer service tasks\n• Extraction of identification, dates and payment commitments\n• Offline fallback without external API dependency\n• Conversation context for coherent responses",
   
   "tts": "TTS (Text-to-Speech)",
   "ttsSub": "Speech synthesis",
