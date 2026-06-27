@@ -99,14 +99,14 @@ export const VenIAVoiceDemo = () => {
       if (remoteStream && remoteAudioRef.current) {
         remoteAudioRef.current.srcObject = remoteStream;
         remoteAudioRef.current.play().catch(e => {
-          addLog(`⚠️ Autoplay blocked: ${e.message}`, true);
+          addLog(`Autoplay blocked: ${e.message}`, true);
           const playOnInteraction = () => {
             remoteAudioRef.current?.play().catch(() => {});
             document.removeEventListener('click', playOnInteraction);
           };
           document.addEventListener('click', playOnInteraction);
         });
-        addLog('🎵 Audio configured');
+        addLog('Audio configured');
       }
     } catch (error) {
       addLog(`Audio error: ${error.message}`, true);
@@ -154,7 +154,7 @@ export const VenIAVoiceDemo = () => {
             if (state === 'Registered') {
               setIsRegistered(true);
               setIsConnecting(false);
-              addLog(`✅ Extension ${currentExtension} registered to ${SIP_CONFIG.domain}`);
+              addLog(`Extension ${currentExtension} registered to ${SIP_CONFIG.domain}`);
             } else if (state === 'Unregistered') {
               setIsRegistered(false);
             }
@@ -180,7 +180,7 @@ export const VenIAVoiceDemo = () => {
           if (error.message.includes('403') || error.message.includes('401')) {
             const newExtension = currentExtension + 1;
             if (newExtension <= SIP_CONFIG.extensionRangeEnd) {
-              addLog(`🔄 Trying with extension ${newExtension}...`);
+              addLog(`Trying with extension ${newExtension}...`);
               setCurrentExtension(newExtension);
             }
           }
@@ -266,7 +266,7 @@ export const VenIAVoiceDemo = () => {
         
             //setTranscript('🎙️ ' + t('demo.connected'));
             setupRemoteAudio(inviter);
-            addLog('✅ Call established with AI agent');
+            addLog('Call established with AI agent');
             break;
           case 'Terminated':
             setIsCallActive(false);
@@ -274,7 +274,7 @@ export const VenIAVoiceDemo = () => {
             if (remoteAudioRef.current) remoteAudioRef.current.srcObject = null;
             currentSessionRef.current = null;
             setTranscript('');
-            addLog('📴 Call ended');
+            addLog('Call ended');
             break;
         }
       });
@@ -282,17 +282,17 @@ export const VenIAVoiceDemo = () => {
       inviter.delegate = {
         onProgress: () => addLog('Call in progress...'),
         onReject: (response) => {
-          addLog(`❌ Call rejected: ${response.message.reasonPhrase || response.message.statusCode}`, true);
+          addLog(`Call rejected: ${response.message.reasonPhrase || response.message.statusCode}`, true);
           setIsCalling(false);
           currentSessionRef.current = null;
         }
       };
       
       await inviter.invite();
-      addLog(`📞 Calling extension ${SIP_CONFIG.agentExtension}...`);
+      addLog(`Calling extension ${SIP_CONFIG.agentExtension}...`);
       
     } catch (error) {
-      addLog(`❌ Error: ${error.message}`, true);
+      addLog(`Error: ${error.message}`, true);
       setIsCalling(false);
       currentSessionRef.current = null;
     }

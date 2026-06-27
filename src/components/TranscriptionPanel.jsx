@@ -42,7 +42,7 @@ export const TranscriptionPanel = ({ callUuid, clientId }) => {
       : null;
     
     if (!wsUrl) {
-      console.log('⏳ Esperando clientId para conectar WebSocket');
+      console.log(' Esperando clientId para conectar WebSocket');
       return;
     }
     
@@ -52,14 +52,14 @@ export const TranscriptionPanel = ({ callUuid, clientId }) => {
     wsRef.current = ws;
 
     ws.onopen = () => {
-      console.log('✅ WebSocket conectado a transcripción con clientId:', clientId);
+      console.log('WebSocket conectado a transcripción con clientId:', clientId);
       setIsConnected(true);
     };
 
     ws.onmessage = (event) => {
       try {
         const data = JSON.parse(event.data);
-        console.log('📨 Mensaje recibido:', data.type);
+        console.log('Mensaje recibido:', data.type);
         
         if (data.type === 'transcription') {
           // Si es el agente, mostrar indicador de tipeo
@@ -83,20 +83,20 @@ export const TranscriptionPanel = ({ callUuid, clientId }) => {
         }
         
         if (data.type === 'customers') {
-          console.log('📋 Clientes recibidos:', data.data.length);
+          console.log('Clientes recibidos:', data.data.length);
           setCustomers(data.data);
         }
         
         if (data.type === 'registration-confirmed') {
-          console.log('✅ Registro de llamada confirmado:', data.callUuid);
+          console.log(' Registro de llamada confirmado:', data.callUuid);
         }
       } catch (error) {
-        console.error('❌ Error parsing message:', error);
+        console.error(' Error parsing message:', error);
       }
     };
 
     ws.onerror = (error) => {
-      console.error('❌ WebSocket error:', error);
+      console.error(' WebSocket error:', error);
 
       //   setConnectionError('CONNECTION_ERROR');
       // // Si el error es de SSL, mostrar mensaje
@@ -107,17 +107,17 @@ export const TranscriptionPanel = ({ callUuid, clientId }) => {
       // }
       setTimeout(() => {
         if (wsRef.current && wsRef.current.readyState === WebSocket.CLOSED) {
-          console.log('🔄 Reintentando conexión WebSocket...');
+          console.log(' Reintentando conexión WebSocket...');
         }
       }, 3000);
     };
 
     ws.onclose = (event) => {
-      console.log(`📴 WebSocket desconectado (código: ${event.code}, motivo: ${event.reason})`);
+      console.log(`WebSocket desconectado (código: ${event.code}, motivo: ${event.reason})`);
       setIsConnected(false);
       
       if (event.code !== 1000) {
-        console.log('🔄 Reconectando WebSocket en 2 segundos...');
+        console.log(' Reconectando WebSocket en 2 segundos...');
         setTimeout(() => {
           if (clientId) {
             setTranscriptions(prev => prev);
