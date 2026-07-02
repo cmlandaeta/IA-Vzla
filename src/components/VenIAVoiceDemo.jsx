@@ -154,7 +154,7 @@ export const VenIAVoiceDemo = () => {
             if (state === 'Registered') {
               setIsRegistered(true);
               setIsConnecting(false);
-              addLog(`Extension ${currentExtension} registered to ${SIP_CONFIG.domain}`);
+              addLog(`Extension ${currentExtension} registered to veniavoice.com`);
             } else if (state === 'Unregistered') {
               setIsRegistered(false);
             }
@@ -282,7 +282,7 @@ export const VenIAVoiceDemo = () => {
       inviter.delegate = {
         onProgress: () => addLog('Call in progress...'),
         onReject: (response) => {
-          addLog(`Call rejected: ${response.message.reasonPhrase || response.message.statusCode}`, true);
+          addLog(`FCall rejected: ${response.message.reasonPhrase || response.message.statusCode}`, true);
           setIsCalling(false);
           currentSessionRef.current = null;
         }
