@@ -344,7 +344,7 @@ export const VenIAVoiceDemo = () => {
       
 
            {/* Aviso de seguridad SSL */}
-      <div className="bg-yellow-500/10 border border-yellow-500 rounded-lg p-4 mb-4">
+     {/* <div className="bg-yellow-500/10 border border-yellow-500 rounded-lg p-4 mb-4">
         <p className="text-sm text-yellow-700 dark:text-yellow-300">
           ⚠️ <strong>{t('demo.securityWarning')}</strong> {t('demo.securityWarningText')}
           <a 
@@ -365,7 +365,7 @@ export const VenIAVoiceDemo = () => {
        
           {t('demo.acceptCertificate')}
         </p>
-      </div>
+      </div>*/} 
 
       {/* Aviso de seguridad SSL - VERSIÓN MEJORADA */}
     {/* {showSecurityWarning && !sslAccepted && (
